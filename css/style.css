@@ -1,0 +1,649 @@
+/* ========================================
+   DREAMSHELF - BIBLIOTHÈQUE ISMONTIC
+   Équipe: Zaid, Sara, Fatima Zohra, Ahmed
+   Thème: Autumn Harvest
+   ======================================== */
+
+/* ========== VARIABLES CSS ========== */
+:root {
+    /* Palette Autumn Harvest */
+    --primary: #D4693A;
+    --secondary: #8B4513;
+    --accent: #DAA520;
+    --bg-light: #FFF8DC;
+    --text-dark: #2C1810;
+    --success: #9B6B3B;
+    
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white !important;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent) !important;
+}
+
+/* ========== PAGE HEADERS ========== */
+.page-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 4rem 0 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.page-header .lead {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========== ABOUT PAGE ========== */
+.address {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 5rem 0 4rem;
+    color: white;
+    text-align: center;
+}
+
+.address-h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.address-p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.address-h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.notre-histoire,
+/* .L'équipe, */
+.Rejoignez-le-Mouvement {
+    padding: 4rem 0;
+}
+
+.notre-histoire {
+    background: var(--bg-light);
+}
+
+.notre-histoire h2,
+.La-Solution-DreamShelf h2,
+.Notre-approche h2,
+.Notre-Mission h2,
+.Notre-Vision h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+.notre-histoire p,
+.La-Solution-DreamShelf p,
+.Notre-Mission p,
+.Notre-Vision p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.Notre-approche ul,
+.Notre-Mission ol,
+.Notre-Vision ul {
+    margin: 2rem 0;
+    padding-left: 2rem;
+}
+
+.Notre-approche li,
+.Notre-Mission li,
+.Notre-Vision li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Team Section */
+.petites {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.petites > div {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.petites img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent);
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.petites > div:hover {
+    transform: translateY(-10px);
+}
+
+.petites img:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(212, 105, 58, 0.4);
+}
+
+.petites h6 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.Rejoignez-le-Mouvement {
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.Rejoignez-le-Mouvement h2 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.Rejoignez-le-Mouvement p {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+
+/* ========== CONTACT PAGE ========== */
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    color: var(--primary);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e0e0e0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem rgba(218, 165, 32, 0.25);
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.info-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.info-card h5 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.info-card a {
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+    color: var(--primary);
+}
+
+/* Map Container */
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-block;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+
+.social-links a.facebook:hover {
+    background: #1877f2;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+}
+
+.social-links a.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.4);
+}
+
+.social-links a.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+}
+
+/* Hours List */
+.hours-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: white;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hours-list li:hover {
+    transform: translateX(5px);
+}
+
+.hours-list .day {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.hours-list .time {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary {
+    background: var(--accent);
+    border: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.btn-primary:hover {
+    background: #f0c020;
+    color: var(--text-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.5);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #6d3410;
+    transform: translateY(-3px);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer h5 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.footer .social-links a {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+/* ========== GENRES SECTION ========== */
+.genres-section {
+    background: var(--bg-light);
+}
+
+.genre-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.genre-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.genre-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.genre-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.genre-card:hover .genre-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.genre-card h4 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.best-read {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+.best-read h6 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.best-read .price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .page-header h1,
+    .address-h1 {
+        font-size: 2rem;
+    }
+    
+    .address-h2 {
+        font-size: 1.5rem;
+    }
+    
+    .petites {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .petites img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+    }
+    
+    .social-links a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header h1,
+    .address-h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hours-list li {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}

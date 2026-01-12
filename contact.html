@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamShelf - Contact</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ========== FOOTER ========== */
+.footer {
+    background: #1a1a1a;
+}
+
+.footer h5 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #ccc; /* Made lighter for better readability */
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.footer .text-muted {
+    color: #ccc !important; /* Made lighter for better readability */
+}
+
+<!-- .social-links a {
+    display: inline-block;
+    transition: all 0.3s ease;
+} -->
+
+.social-links a:hover {
+    color: var(--accent) !important;
+    transform: translateY(-5px);
+}
+.contact-social .social-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    color: var(--text-dark);
+    min-width: 150px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-book-reader me-2"></i>
+                <span>DreamShelf</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i> Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="livres.html">
+                            <i class="fas fa-book me-1"></i> Catalogue
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="emprunts.html">
+                            <i class="fas fa-clipboard-list me-1"></i> Emprunts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i> À Propos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>
+                <i class="fas fa-envelope-open-text me-3"></i>
+                Contactez-nous
+            </h1>
+            <p class="lead">Nous sommes à votre disposition pour toute question ou suggestion.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mb-4">
+                    <div class="contact-form">
+                        <h2 class="mb-4">
+                            <i class="fas fa-paper-plane me-2 text-primary"></i>
+                            Envoyez-nous un message
+                        </h2>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nom" class="form-label">Nom *</label>
+                                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="prenom" class="form-label">Prénom *</label>
+                                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email OFPPT *</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="exemple@ofppt-edu.ma" pattern=".*@ofppt-edu\.ma$" required>
+                                <small class="text-muted">Utilisez uniquement votre email institutionnel OFPPT</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sujet" class="form-label">Sujet *</label>
+                                <select class="form-select" id="sujet" name="sujet" required>
+                                    <option value="" selected disabled>Choisissez un sujet</option>
+                                    <option value="question">Question générale</option>
+                                    <option value="suggestion">Suggestion</option>
+                                    <option value="probleme">Signaler un problème</option>
+                                    <option value="emprunt">Question sur un emprunt</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    Envoyer
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fas fa-redo me-2"></i>
+                                    Réinitialiser
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Cards -->
+                <div class="col-lg-5">
+                    <div class="info-card mb-4">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Adresse</h5>
+                        <p class="mb-0">
+                            <strong>ISMONTIC Tanger</strong><br>
+                            P5V3+CCW, Av. des Forces Armées Royales<br>
+                            Tanger, Maroc
+                        </p>
+                    </div>
+                    
+                    <div class="info-card mb-4">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Téléphone</h5>
+                        <p class="mb-0">
+                            <a href="tel:+212539380871">
+                                <i class="fas fa-phone-alt me-2"></i>
+                                +212 539-380871
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p class="mb-0">
+                            <a href="mailto:ismontictanger.ofppt@gmail.com">
+                                <i class="fas fa-envelope me-2"></i>
+                                ismontictanger.ofppt@gmail.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>
+                    <i class="fas fa-map-marked-alt me-2 text-primary"></i>
+                    Notre Localisation
+                </h2>
+                <p class="text-muted">Visitez-nous à l'ISMONTIC Tanger</p>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.2921746801303!2d-5.8464287!3d35.7436228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b870e30193289%3A0x9d0508f158464547!2sSpecialized%20Institute%20in%20professions%20exporting%20services%20and%20modern%20technologies%20for%20information%20and%20communication!5e0!3m2!1sen!2sma!4v1762027826458!5m2!1sen!2sma" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>
+                    <i class="fas fa-share-alt me-2 text-primary"></i>
+                    Suivez-nous sur les Réseaux Sociaux
+                </h2>
+                <p class="text-muted">Restez connectés avec nous</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/istaNTICTANGER" target="_blank" class="facebook">
+                    <i class="bi bi-facebook fs-4"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/istantic_tanger?igsh=M24wOWs1YzVvYm4w" target="_blank" class="instagram">
+                    <i class="bi bi-instagram fs-4"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com/school/ismontic/" target="_blank" class="linkedin">
+                    <i class="bi bi-linkedin fs-4"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Opening Hours Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h2>
+                            <i class="fas fa-clock me-2 text-primary"></i>
+                            Horaires d'Ouverture
+                        </h2>
+                        <p class="text-muted">Bibliothèque ISMONTIC</p>
+                    </div>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">
+                                <i class="fas fa-calendar-day me-2"></i>
+                                Lundi - Jeudi
+                            </span>
+                            <span class="time">8h30 - 13h30 | 13h30 - 18h30</span>
+                        </li>
+                        <li>
+                            <span class="day">
+                                <i class="fas fa-calendar-day me-2"></i>
+                                Vendredi
+                            </span>
+                            <span class="time">8h30 - 13h30 | 14h30 - 18h30</span>
+                        </li>
+                        <li style="background: #ffebee;">
+                            <span class="day" style="color: #c62828;">
+                                <i class="fas fa-calendar-times me-2"></i>
+                                Samedi - Dimanche
+                            </span>
+                            <span class="time" style="color: #c62828; font-weight: bold;">Fermé</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+<footer class="footer text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h5 class="mb-3">
+                    <i class="fas fa-book-reader me-2"></i> DreamShelf
+                </h5>
+                <p class="text-muted">
+                    Votre bibliothèque collaborative ISMONTIC. Emprunter un livre, c'est emprunter un rêve.
+                </p>
+                <div class="social-links mt-3">
+                    <a href="https://www.facebook.com/istaNTICTANGER" target="_blank" class="text-white me-3">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="https://www.instagram.com/istantic_tanger" target="_blank" class="text-white me-3">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/school/ismontic/" target="_blank" class="text-white me-3">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <h5 class="mb-3">Liens Rapides</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i> Accueil</a></li>
+                    <li><a href="livres.html"><i class="fas fa-chevron-right me-2"></i> Catalogue</a></li>
+                    <li><a href="emprunts.html"><i class="fas fa-chevron-right me-2"></i> Mes Emprunts</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle me-2"></i> À Propos</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope me-2"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-12">
+                <h5 class="mb-3">Contact</h5>
+                <ul class="list-unstyled text-muted">
+                    <li class="mb-2">
+                        <i class="fas fa-map-marker-alt me-2"></i> ISMONTIC Tanger, Maroc
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-phone me-2"></i> +212 539-380871
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2"></i> Dreamshelf@ofppt.ma
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-clock me-2"></i> Lun - Ven: 8h:30 - 18h:30
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="my-4 bg-secondary">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="mb-0 text-muted">
+                    &copy; 2025 <strong>DreamShelf</strong>. Tous droits réservés. 
+                    Projet réalisé avec <i class="fas fa-heart text-danger"></i> par l'équipe ISMONTIC.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
